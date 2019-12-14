@@ -1,6 +1,7 @@
 dependencies {
     implementation project(":")
 
+    testImplementation "cn.tursom:TursomServer:0.1"
     implementation "cn.tursom:log:0.1"
     implementation "cn.tursom:utils:0.1"
     implementation "cn.tursom:json:0.1"

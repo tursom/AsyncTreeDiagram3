@@ -87,27 +87,22 @@ class ModLoader constructor(
       return myClassName
     }
 
-    suspend inline fun <reified T> T.loadMod(
+    inline fun <reified T> T.getModLoader(
       pkg: String,
-      parentClassLoader: ClassLoader = T::class.java.classLoader
-    ) {
-      val classLoader = ListClassLoader(arrayOf(), parentClassLoader)
-      val classList = parentClassLoader.getClassByPackage(pkg)
-      ModLoader(classList, classLoader).load()
-    }
-
-    suspend inline fun <reified T> T.getModLoader(
-      pkg: String,
-      loadInstantly: Boolean = false,
       parentClassLoader: ClassLoader = T::class.java.classLoader
     ): ModLoader {
       val classLoader = ListClassLoader(arrayOf(), parentClassLoader)
       val classList = parentClassLoader.getClassByPackage(pkg)
-      return ModLoader(classList, classLoader).also { loader ->
-        if (loadInstantly) {
-          loader.load()
-        }
-      }
+      return ModLoader(classList, classLoader)
+    }
+
+    fun getModLoader(
+      pkg: String,
+      parentClassLoader: ClassLoader = Thread.currentThread().contextClassLoader
+    ): ModLoader {
+      val classLoader = ListClassLoader(arrayOf(), parentClassLoader)
+      val classList = parentClassLoader.getClassByPackage(pkg)
+      return ModLoader(classList, classLoader)
     }
 
     suspend fun getModLoader(
@@ -139,6 +134,14 @@ class ModLoader constructor(
           loader.load()
         }
       }
+    }
+
+
+    suspend fun loadModByPackage(
+      pkg: String,
+      parentClassLoader: ClassLoader = Thread.currentThread().contextClassLoader
+    ): ModLoader {
+      return getModLoader(pkg, parentClassLoader).also { it.load() }
     }
   }
 }
