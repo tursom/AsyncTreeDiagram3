@@ -1,0 +1,8 @@
+server:
+  port: 8086
+
+# 启用shutdown
+management:
+  endpoint:
+    shutdown:
+      enabled: true

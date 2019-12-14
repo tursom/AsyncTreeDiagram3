@@ -1,0 +1,19 @@
+dependencies {
+    implementation project(":")
+
+    implementation "cn.tursom:log:0.1"
+    implementation "cn.tursom:utils:0.1"
+    implementation "cn.tursom:json:0.1"
+    implementation "cn.tursom:async-http:0.1"
+    implementation "cn.tursom:web:0.1"
+    implementation "cn.tursom:web-coroutine:0.1"
+    implementation "cn.tursom:netty-web:0.1"
+
+    implementation "com.google.code.gson:gson:2.8.2"
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.29'
+    implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+
+    implementation group: "io.netty", name: "netty-all", version: "4.1.33.Final"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.1'
+}

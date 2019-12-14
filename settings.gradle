@@ -1,0 +1,3 @@
+rootProject.name = 'AsyncTreeDiagram3'
+include 'WebMod'
+include 'spring'
