@@ -13,6 +13,6 @@ open class AbstractModule : Module {
   override val modHelper: String = super.modHelper
 
   override fun toString(): String {
-    return "${modId[0]} version $apiVersion-$version${if (modDescription.isEmpty()) "" else ": $modDescription"}"
+    return "$modId version $apiVersion.$version${if (modDescription.isEmpty()) "" else ": $modDescription"}"
   }
 }
