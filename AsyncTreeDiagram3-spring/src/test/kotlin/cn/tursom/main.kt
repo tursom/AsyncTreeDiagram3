@@ -5,18 +5,19 @@ import cn.tursom.spring.WebModule
 import cn.tursom.web.mapping.GetMapping
 import cn.tursom.web.result.Text
 import org.springframework.context.annotation.ComponentScan
-import org.springframework.stereotype.Component
+import org.springframework.context.annotation.Configuration
+import org.springframework.stereotype.Controller
 import kotlin.math.absoluteValue
 import kotlin.random.Random
 
-@Component
+@Controller
 class HelloWorld : WebModule() {
   @GetMapping("/")
   @Text
   fun index() = "hello, world!"
 }
 
-@Component
+@Controller
 class TestController : WebModule() {
   @GetMapping("random")
   @Text
@@ -24,9 +25,9 @@ class TestController : WebModule() {
 }
 
 @ComponentScan
-@Component
-class Application
+@Configuration
+open class Application
 
 fun main() {
-  ApplicationStater.run(Application::class.java)
+  val applicationContext = ApplicationStater.run(Application::class.java)
 }

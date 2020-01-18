@@ -1,8 +1,0 @@
-dependencies {
-    implementation project(":")
-    implementation "cn.tursom:netty-web:0.1"
-    api "cn.tursom:web:0.1"
-    api group: 'org.springframework', name: 'spring-beans', version: '5.2.3.RELEASE'
-    api group: 'org.springframework', name: 'spring-core', version: '5.2.3.RELEASE'
-    api group: 'org.springframework', name: 'spring-context', version: '5.2.3.RELEASE'
-}
