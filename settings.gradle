@@ -1,3 +1,4 @@
 rootProject.name = 'AsyncTreeDiagram3'
-include 'AsyncTreeDiagram-web'
-include 'AsyncTreeDiagram-spring'
+include 'AsyncTreeDiagram3-web'
+include 'AsyncTreeDiagram3-springboot'
+include 'AsyncTreeDiagram3-spring'
