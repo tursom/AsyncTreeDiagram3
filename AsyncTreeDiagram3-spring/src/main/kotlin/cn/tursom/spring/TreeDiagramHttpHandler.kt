@@ -1,6 +1,5 @@
 package cn.tursom.spring
 
-import cn.tursom.treediagram.Module
 import cn.tursom.web.router.AsyncRoutedHttpHandler
 import cn.tursom.web.router.impl.ColonRouter
 import org.springframework.beans.factory.annotation.Autowired
