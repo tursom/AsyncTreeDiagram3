@@ -13,13 +13,17 @@ open class YamlConfigure {
   open fun properties(): PropertySourcesPlaceholderConfigurer? {
     val propertySourcesPlaceholderConfigurer = PropertySourcesPlaceholderConfigurer()
     val yaml = YamlPropertiesFactoryBean()
-    yaml.setResources(
-      PathResource("config/application.yml"),
-      PathResource("application.yml"),
-      ClassPathResource("config/application.yml"),
-      ClassPathResource("application.yml")
+    yaml.setResources(*(
+      listOf(
+        ClassPathResource("application.yml"),
+        ClassPathResource("config/application.yml"),
+        PathResource("application.yml"),
+        PathResource("config/application.yml")
+      ).filter { it.exists() }
+        .toTypedArray()
+      )
     )
-    propertySourcesPlaceholderConfigurer.setProperties(yaml.getObject())
+    propertySourcesPlaceholderConfigurer.setProperties(yaml.getObject()!!)
     return propertySourcesPlaceholderConfigurer
   }
 }
