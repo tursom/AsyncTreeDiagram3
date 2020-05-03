@@ -1,14 +1,12 @@
 dependencies {
     implementation project(":")
 
-    testImplementation "cn.tursom:TursomServer:0.1"
-    implementation "cn.tursom:log:0.1"
-    implementation "cn.tursom:utils:0.1"
-    implementation "cn.tursom:json:0.1"
-    implementation "cn.tursom:async-http:0.1"
-    implementation "cn.tursom:web:0.1"
-    implementation "cn.tursom:web-coroutine:0.1"
-    implementation "cn.tursom:netty-web:0.1"
+    compile "cn.tursom:log:0.1"
+    //compile "cn.tursom:utils:0.1"
+    compile "cn.tursom:json:0.1"
+    compile "cn.tursom:async-http:0.1"
+    compile "cn.tursom:web-coroutine:0.1"
+    compile "cn.tursom:netty-web:0.1"
 
     implementation "com.google.code.gson:gson:2.8.2"
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.29'
